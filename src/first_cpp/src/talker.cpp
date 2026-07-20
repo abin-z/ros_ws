@@ -3,6 +3,9 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
+namespace
+{
+
 class Talker : public rclcpp::Node
 {
  public:
@@ -27,6 +30,7 @@ class Talker : public rclcpp::Node
   rclcpp::TimerBase::SharedPtr timer_;
   std::atomic_int count_ = 1;
 };
+}  // namespace
 
 int main(int argc, char **argv)
 {

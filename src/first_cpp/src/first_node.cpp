@@ -1,6 +1,9 @@
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 
+namespace
+{
+
 // 自定义节点。
 // ROS2 中的绝大多数功能（Topic、Service、Action 等）都运行在 Node 上。
 class FirstNode : public rclcpp::Node
@@ -14,6 +17,7 @@ class FirstNode : public rclcpp::Node
     RCLCPP_INFO(this->get_logger(), "Hello ROS2 from C++! 我的第一个节点");
   }
 };
+}  // namespace
 
 int main(int argc, char **argv)
 {

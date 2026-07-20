@@ -9,6 +9,8 @@
 
 using TurnAngle = robot_interfaces::action::TurnAngle;
 using GoalHandleTurnAngle = rclcpp_action::ServerGoalHandle<TurnAngle>;
+namespace
+{
 
 class TurnAngleServer : public rclcpp::Node
 {
@@ -93,6 +95,7 @@ class TurnAngleServer : public rclcpp::Node
   }
 };
 
+}  // namespace
 int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);

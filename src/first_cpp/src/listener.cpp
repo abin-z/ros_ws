@@ -2,6 +2,9 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
+namespace
+{
+
 class Listener : public rclcpp::Node
 {
  public:
@@ -19,6 +22,7 @@ class Listener : public rclcpp::Node
 
   rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_;
 };
+}  // namespace
 
 int main(int argc, char **argv)
 {
