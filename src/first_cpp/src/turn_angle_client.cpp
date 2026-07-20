@@ -45,8 +45,8 @@ class TurnAngleClient : public rclcpp::Node
     rclcpp_action::Client<TurnAngle>::SendGoalOptions options;
 
     // 1. 反馈回调（执行过程中）
-    options.feedback_callback = [this](GoalHandleTurnAngle::SharedPtr,
-                                       const std::shared_ptr<const TurnAngle::Feedback> feedback) {
+    options.feedback_callback = [this](const GoalHandleTurnAngle::SharedPtr&,
+                                       const std::shared_ptr<const TurnAngle::Feedback>& feedback) {
       RCLCPP_INFO(get_logger(), "Feedback: current_angle = %.1f", feedback->current_angle);
     };
 
