@@ -19,7 +19,7 @@ class Listener : public rclcpp::Node
   }
 
  private:
-  void callback(const std_msgs::msg::String::SharedPtr msg)
+  void callback(const std_msgs::msg::String::SharedPtr &msg)
   {
     RCLCPP_INFO(this->get_logger(), "C++ received: '%s'", msg->data.c_str());
   }
