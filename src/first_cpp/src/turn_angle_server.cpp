@@ -39,7 +39,7 @@ class TurnAngleServer : public rclcpp::Node
   }
 
   // ========== 2. 处理 Cancel ==========
-  rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<GoalHandleTurnAngle>)
+  rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<GoalHandleTurnAngle> &)
   {
     RCLCPP_INFO(get_logger(), "Cancel Request Received");
     return rclcpp_action::CancelResponse::ACCEPT;
