@@ -2,11 +2,10 @@
 // 官方案例地址: https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-an-Action-Server-Client/Cpp.html
 
 #include <memory>
+#include <rclcpp/rclcpp.hpp>
+#include <rclcpp_action/rclcpp_action.hpp>
+#include <robot_interfaces/action/turn_angle.hpp>
 #include <thread>
-
-#include "rclcpp/rclcpp.hpp"
-#include "rclcpp_action/rclcpp_action.hpp"
-#include "robot_interfaces/action/turn_angle.hpp"
 
 using TurnAngle = robot_interfaces::action::TurnAngle;
 using GoalHandleTurnAngle = rclcpp_action::ServerGoalHandle<TurnAngle>;
@@ -30,7 +29,8 @@ class TurnAngleServer : public rclcpp::Node
   rclcpp_action::Server<TurnAngle>::SharedPtr server_;
 
   // ========== 1. 处理 Goal ==========
-  rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &, const std::shared_ptr<const TurnAngle::Goal>& goal)
+  rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &,
+                                          const std::shared_ptr<const TurnAngle::Goal> &goal)
   {
     RCLCPP_INFO(get_logger(), "Receive Goal: %.1f", goal->target_angle);
     return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
@@ -44,7 +44,7 @@ class TurnAngleServer : public rclcpp::Node
   }
 
   // ========== 3. 接受 Goal 后执行 ==========
-  void handle_accepted(const std::shared_ptr<GoalHandleTurnAngle>& goal_handle)
+  void handle_accepted(const std::shared_ptr<GoalHandleTurnAngle> &goal_handle)
   {
     RCLCPP_INFO(get_logger(), "Goal Accepted");
 
@@ -52,7 +52,7 @@ class TurnAngleServer : public rclcpp::Node
   }
 
   // ========== 4. 真正执行逻辑 ==========
-  void execute(const std::shared_ptr<GoalHandleTurnAngle>& goal_handle)
+  void execute(const std::shared_ptr<GoalHandleTurnAngle> &goal_handle)
   {
     RCLCPP_INFO(get_logger(), "Start executing goal...");
 

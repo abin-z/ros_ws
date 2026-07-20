@@ -1,10 +1,7 @@
 #include <atomic>
 #include <memory>
-
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
-
-using std::placeholders::_1;
+#include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/string.hpp>
 
 class Talker : public rclcpp::Node
 {

@@ -2,10 +2,9 @@
 // 官方案例地址: https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-an-Action-Server-Client/Cpp.html
 
 #include <memory>
-
-#include "rclcpp/rclcpp.hpp"
-#include "rclcpp_action/rclcpp_action.hpp"
-#include "robot_interfaces/action/turn_angle.hpp"
+#include <rclcpp/rclcpp.hpp>
+#include <rclcpp_action/rclcpp_action.hpp>
+#include <robot_interfaces/action/turn_angle.hpp>
 
 using TurnAngle = robot_interfaces::action::TurnAngle;
 using GoalHandleTurnAngle = rclcpp_action::ClientGoalHandle<TurnAngle>;
@@ -45,8 +44,8 @@ class TurnAngleClient : public rclcpp::Node
     rclcpp_action::Client<TurnAngle>::SendGoalOptions options;
 
     // 1. 反馈回调（执行过程中）
-    options.feedback_callback = [this](const GoalHandleTurnAngle::SharedPtr&,
-                                       const std::shared_ptr<const TurnAngle::Feedback>& feedback) {
+    options.feedback_callback = [this](const GoalHandleTurnAngle::SharedPtr &,
+                                       const std::shared_ptr<const TurnAngle::Feedback> &feedback) {
       RCLCPP_INFO(get_logger(), "Feedback: current_angle = %.1f", feedback->current_angle);
     };
 

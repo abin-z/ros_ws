@@ -1,8 +1,5 @@
 #include <memory>
-
-#include "rclcpp/executors.hpp"
-#include "rclcpp/logging.hpp"
-#include "rclcpp/node.hpp"
+#include <rclcpp/rclcpp.hpp>
 
 // 自定义节点。
 // ROS2 中的绝大多数功能（Topic、Service、Action 等）都运行在 Node 上。

@@ -1,8 +1,7 @@
 #include <chrono>
+#include <example_interfaces/srv/add_two_ints.hpp>
 #include <memory>
-
-#include "example_interfaces/srv/add_two_ints.hpp"
-#include "rclcpp/rclcpp.hpp"
+#include <rclcpp/rclcpp.hpp>
 
 using namespace std::chrono_literals;
 
