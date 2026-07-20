@@ -24,8 +24,7 @@ performance-unnecessary-value-param,
 -readability-identifier-length,
 -readability-redundant-access-specifiers,
 -cppcoreguidelines-pro-type-reinterpret-cast,
--readability-function-cognitive-complexity,
--misc-include-cleaner
+-readability-function-cognitive-complexity
 '
 
 
