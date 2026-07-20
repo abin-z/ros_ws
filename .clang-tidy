@@ -2,7 +2,7 @@ Checks: 'cppcoreguidelines-*,
 performance-*,
 modernize-*,
 google-*,
-misc-*
+misc-*,
 cert-*,
 readability-*,
 clang-analyzer-*,
@@ -14,7 +14,6 @@ performance-unnecessary-value-param,
 -google-readability-braces-around-statements,
 -cppcoreguidelines-avoid-magic-numbers,
 -readability-magic-numbers,
--readability-magic-numbers,
 -cppcoreguidelines-pro-type-vararg,
 -cppcoreguidelines-pro-bounds-pointer-arithmetic,
 -cppcoreguidelines-avoid-c-arrays,
@@ -25,7 +24,8 @@ performance-unnecessary-value-param,
 -readability-identifier-length,
 -readability-redundant-access-specifiers,
 -cppcoreguidelines-pro-type-reinterpret-cast,
--readability-function-cognitive-complexity
+-readability-function-cognitive-complexity,
+-misc-include-cleaner
 '
 
 
