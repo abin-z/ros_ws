@@ -1,3 +1,4 @@
+#include <atomic>
 #include <memory>
 
 #include "rclcpp/rclcpp.hpp"
